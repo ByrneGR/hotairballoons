@@ -4,7 +4,7 @@
     * Users will be able to:
         * View infinite animation of floating hot air balloons over a serene backdrop as well as other animations to supplement creating an immersive visual environment 
         * Play and mute music
-        * Change the color and speed (winds) of the floating hot air balloons
+        * Change the speed (winds) and the color of the floating hot air balloons
         * View an inspiring quote that changes each day - can also generate a new quote on click
 
 3. Wireframes

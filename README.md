@@ -1,180 +1,54 @@
-1. create your new project directory and `cd` into it 
-2. `git init`
-3. create a simple `.gitignore`
-        
-        # .gitignore
+1. Background and Overview
+    * In these unprecedented times of uncertainty and isolation, loneliness and anxiety is rampant. AirBalloons aims to be an escape for those seeking a moment to breathe and clear their heads. Through calming music, engaging visuals, and a likeminded community, visitors can take some time to themselves and connect with people around the world who enjoy the same music.
+2. Functionality and MVPs
+    * Users will be able to:
+        * View infinite animation of floating hot air balloons over a serene backdrop as well as other animations to supplement creating an immersive visual environment 
+        * Change colors of balloon by clicking on it
+        * Play and mute music
+        * Chat with other users on the site
+3. Wireframes
+![Imgur](https://imgur.com/fx7s0AJ.jpg)
 
-        /node_modules/
-4. `npm init` and follow prompts
-5. install dev dependencies
-   
-        npm install @babel/core @babel/preset-env autoprefixer babel-loader css-loader fibers file-loader mini-css-extract-plugin node-sass postcss-loader sass sass-loader style-loader url-loader webpack webpack-cli webpack-dev-server webpack-merge --save-dev
+4. Architecture and Technology
+    * Frontend
+        * Bundler - webpack
+        * Environment - Node.js
+        * Graphics - Canvas
+        * Animation - Snap.svg
+        * Music - Soundlcoud API
+    * Backend
+        * Database - MongoDB
+        * Routing - Express
+        * ODM - Mongoose
+    * Miscellaneous
+        * SVG Art - Adobe Illustrator
+    * File Structure
+        * index.html will hold divs for each component
+        * index.js will connect all javascript files
+            * animation 
+                * air_balloons.js
+                * background_animations.js
+            * Music
+                * soundcloud_player.js
+            * chat
+                * chat_actions.js
+                * chat_interface.js
+                * chat_reducer.js
+                * chat_api_util.js
+                * store.js
+5. Implementation TImeline
+    * Day 1: Animations
+        *  Air balloon movement animation and appearance randomization complete
+    * Day 2: Animations/SoundCloud API
+        * Finish balloon-related animations if necessary
+        * Integrate sound cloud API and have music playing on website
+    * Day 3: Live chat
+        * Backend for chat implemented
+        * Chat front end implemented
+    * Day 4/5: Supplemental animations
+        * Background image/animations in illustrator
+6. Bonus Features
+    * Additional appearances by genre of music
+    * Profiles
+    * Personalized character
 
-6. create basic `/src` subdirectory file structure
-
-        - src/
-            - index.js
-            styles/
-                - index.scss
-            scripts/
-
-7. In your root directory, create `webpack.common.js`
-
-    ```JavaScript
-    // webpack.common.js
-
-    const path = require("path");
-    const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-    const outputDir = "./dist";
-
-    module.exports = {
-    entry: path.resolve(__dirname, "src", "index.js"), //
-    output: {
-        path: path.join(__dirname, outputDir),
-        filename: "[name].js",
-        publicPath: "/dist/"
-    },
-    resolve: {
-        extensions: [".js"] // if we were using React.js, we would include ".jsx"
-    },
-    module: {
-        rules: [
-        {
-            test: /\.js$/, // if we were using React.js, we would use \.jsx?$/
-            use: {
-            loader: "babel-loader",
-            options: {
-                presets: ["@babel/preset-env"],
-                plugins: ["@babel/plugin-proposal-optional-chaining"],
-                exclude: /node_modules/
-            } // if we were using React.js, we would include "react"
-            }
-        },
-        {
-            test: /\.css$/,
-            use: [
-            {
-                loader: MiniCssExtractPlugin.loader,
-                options: {
-                // you can specify a publicPath here
-                // by default it uses publicPath in webpackOptions.output
-                publicPath: "../",
-                hmr: process.env.NODE_ENV === "development"
-                }
-            },
-            "css-loader",
-            "postcss-loader"
-            ]
-        },
-        {
-            test: /\.(png|jpe?g|gif)$/i,
-            use: [
-            {
-                loader: "file-loader",
-                options: {
-                // you can specify a publicPath here
-                // by default it uses publicPath in webpackOptions.output
-                name: "[name].[ext]",
-                outputPath: "images/",
-                publicPath: "images/"
-                }
-            }
-            ]
-        },
-        {
-            test: /\.scss/,
-            use: [
-            {
-                loader: MiniCssExtractPlugin.loader,
-                options: {
-                // you can specify a publicPath here
-                // by default it uses publicPath in webpackOptions.output
-                publicPath: "../",
-                hmr: process.env.NODE_ENV === "development"
-                }
-            },
-            "css-loader",
-            "sass-loader",
-            "postcss-loader"
-            ]
-        }
-        ]
-    },
-    plugins: [
-        new MiniCssExtractPlugin({
-        // Options similar to the same options in webpackOptions.output
-        // all options are optional
-        filename: "[name].css",
-        chunkFilename: "[id].css",
-        ignoreOrder: false // Enable to remove warnings about conflicting order
-        }),
-        require("autoprefixer")
-    ]
-    };
-
-    ```
-
-8. Create `webpack.dev.js`
-
-    ```JavaScript
-    // wepack.dev.js
-    const merge = require("webpack-merge");
-    const common = require("./webpack.common.js");
-
-    module.exports = merge(common, {
-        mode: "development",
-        devtool: "inline-source-map",
-        devServer: {
-            contentBase: "./",
-            watchContentBase: true,
-            open: "Google Chrome"
-        }
-    });
-    ```
-
-9. Create `webpack.prod.js`
-
-    ```JavaScript
-    // webpack.prod.js
-    const merge = require("webpack-merge");
-    const common = require("./webpack.common.js");
-
-    module.exports = merge(common, {
-        mode: "production",
-        devtool: "source-map"
-    });
-    ```
-
-10. create `postcss.config.js`
-
-    ```JavaScript
-    // postcss.config.js
-    module.exports = {
-        plugins: {
-            autoprefixer: {}
-        }
-    };
-    ```
-
-11. add `browserlist` key and update `scripts` in `package.json`
-
-    ```JavaScript
-    // package.json
-    "browserslist": [
-        "last 1 version",
-        "> 1%",
-        "maintained node versions",
-        "not dead"
-    ],
-    "scripts": {
-        "start": "webpack-dev-server --config webpack.dev.js",
-        "webpack:watch": "webpack --watch --config webpack.dev.js",
-        "webpack:build": "webpack --config webpack.prod.js  --optimize-minimize"
-    },
-    ```
-
-12. create `index.scss` in `/src/styles`
-
-13. create `index.js` in `/src` directory and import style `/src/styles/index.scss`
-
-14. create `index.html` and import `dist/main.css` and `dist/main.js` appropriately

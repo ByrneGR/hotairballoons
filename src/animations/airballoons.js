@@ -1,4 +1,4 @@
-class canvasExample {
+class airBalloon {
   constructor(props) {
     this.coords = [10, 10, 150, 100];
     this.animationDir = 1;

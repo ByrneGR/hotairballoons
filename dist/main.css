@@ -1,4 +1,33 @@
-body{background-color:#ccf;color:blue;display:flex;flex-direction:column}.center{display:flex;align-items:center;justify-content:center}.card{background:white;height:50vh;width:50vw;border-radius:15px;margin-top:15px;box-shadow:3px 3px 5px 5px #009,1px 0px 1px #009}.image-card{background-image:url(images/yoda-stitch.jpg);background-position:center}h2{font-size:3rem}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* svg {
+  text-align: center;
+  /* height: 100px;
+  width: 1000px; */
+  /* border: 3px solid red; */
+/* } */
 
+body {
+  background-color: blue;
+}
+
+#sky {
+  height: 50%;
+  width: 1000px;
+  position: relative;
+  border: 1px solid black;
+}
+
+#balloon1 {
+  position: absolute;
+  float: left;
+}
+
+svg {
+  float: left;
+}
 /*# sourceMappingURL=main.css.map*/

@@ -1,5 +1,5 @@
 1. Background and Overview
-    * In these unprecedented times of uncertainty and isolation, loneliness and anxiety is rampant. AirBalloons aims to be an escape for those seeking a moment to breathe and clear their heads. Through calming music, engaging visuals, and a likeminded community, visitors can take some time to themselves and connect with people around the world who.
+    * In these unprecedented times of uncertainty and isolation, loneliness and anxiety is rampant. AirBalloons aims to be an escape for those seeking a moment to breathe and clear their heads. Through calming music, engaging visuals, and a likeminded community, visitors can take some time to themselves and connect with people around the world who enjoy the same music.
 2. Functionality and MVPs
     * Users will be able to:
         * View infinite animation of floating hot air balloons over a serene backdrop as well as other animations to supplement creating an immersive visual environment 

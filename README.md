@@ -3,6 +3,7 @@
 2. Functionality and MVPs
     * Users will be able to:
         * View infinite animation of floating hot air balloons over a serene backdrop as well as other animations to supplement creating an immersive visual environment 
+        * Change colors of balloon by clicking on it
         * Play and mute music
         * Chat with other users on the site
 3. Wireframes

@@ -6,7 +6,8 @@
         * Play and mute music
         * Chat with other users on the site
 3. Wireframes
-![alt text](file:///Users/gabebyrne/Desktop/Screen%20Shot%202020-08-16%20at%208.21.04%20PM.png)
+![Imgur](https://imgur.com/9UkEbOs.jpg)
+![Imgur](https://imgur.com/fx7s0AJ.jpg)
 
 4. Architecture and Technology
 5. Implementation TImeline

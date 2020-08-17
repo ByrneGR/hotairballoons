@@ -6,7 +6,6 @@
         * Play and mute music
         * Chat with other users on the site
 3. Wireframes
-![Imgur](https://imgur.com/9UkEbOs.jpg)
 ![Imgur](https://imgur.com/fx7s0AJ.jpg)
 
 4. Architecture and Technology

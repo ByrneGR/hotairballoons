@@ -23,10 +23,11 @@ function myMove() {
 
   function frame() {
     debugger
-    if (xPos < 55) {
+    if (xPos < 52) {
       xPos += 0.015
     } else { 
-      xPos = -55;
+      xPos = -60;
+      yPos = 30
     }  
     if (xPos < -5) {
       yPos -= 0.008 

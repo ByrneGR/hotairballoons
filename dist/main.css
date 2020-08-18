@@ -11,23 +11,26 @@
   /* border: 3px solid red; */
 /* } */
 
-body {
-  background-color: blue;
-}
 
 #sky {
-  height: 60%;
+  height: 100%;
   width: 1000px;
   position: relative;
   border: 1px solid black;
 }
 
-#balloon1 {
-  position: absolute;
-  float: left;
+#balloon2 {
+  /* position: absolute;
+  float: left; */
+  z-index: 10;
 }
 
-svg {
-  float: left;
+#backgroundsvg {
+  z-index: 1;
 }
+
+
+/* svg {
+  float: left;
+} */
 /*# sourceMappingURL=main.css.map*/

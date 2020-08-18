@@ -14,7 +14,6 @@ var elem = document.getElementById("balloon2");
 }
 
 function myMove() {
-  debugger;
   var elem = document.getElementById("balloon2");
       //  elem.style.transform = "translate(-500px, 300px)"
   var xPos = -60;
@@ -22,7 +21,6 @@ function myMove() {
   setInterval(frame, 5);
 
   function frame() {
-    debugger
     if (xPos < 52) {
       xPos += 0.015
     } else { 
@@ -40,8 +38,6 @@ function myMove() {
     //   yPos++
     // }   
       elem.style.transform = "translate( " + xPos + "vw, " + yPos + "vw )"
-
-    debugger
  }
 }
 

@@ -7,31 +7,38 @@ import "./styles/index.scss";
 
 
 window.onload = function () {
-// var elem = document.getElementById("balloon2");
+var elem = document.getElementById("balloon2");
  myMove()
+// elem.style.transform = "translate(100px, 200px)"
+
 }
 
 function myMove() {
   debugger;
   var elem = document.getElementById("balloon2");
       //  elem.style.transform = "translate(-500px, 300px)"
-  var xPos = -500;
-  var yPos = 300;
-  setInterval(frame, 30);
+  var xPos = -60;
+  var yPos = 30;
+  setInterval(frame, 5);
 
   function frame() {
     debugger
-    if (xPos < 1000) {
-      xPos ++
+    if (xPos < 55) {
+      xPos += 0.015
     } else { 
-      xPos = -500;
+      xPos = -55;
     }  
-    if (yPos >= 0 && xPos < 0) {
-      yPos--;}
-    else {
-      yPos++
-    }   
-      elem.style.transform = "translate( " + xPos + "px, " + yPos + "px )"
+    if (xPos < -5) {
+      yPos -= 0.008 
+    // else if (xPos >= -5 && xPos < 5) {
+    //   yPos = 0
+    } else  {
+      yPos += 0.008
+    }
+    // else {
+    //   yPos++
+    // }   
+      elem.style.transform = "translate( " + xPos + "vw, " + yPos + "vw )"
 
     debugger
  }

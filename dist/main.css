@@ -12,22 +12,7 @@
 /* } */
 
 
-#sky {
-  height: 100%;
-  width: 1000px;
-  position: relative;
-  border: 1px solid black;
-}
 
-#balloon2 {
-  /* position: absolute;
-  float: left; */
-  z-index: 10;
-}
-
-#backgroundsvg {
-  z-index: 1;
-}
 
 
 /* svg {

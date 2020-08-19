@@ -13,4 +13,20 @@ html {
   position: relative;
 }
 
+#stop_gradient_top {
+  animation: mymove 5s infinite;
+}
+
+
+
+@keyframes mymove {
+  from {
+    background-color: red;
+  }
+
+  to {
+    background-color: blue;
+  }
+}
+
 

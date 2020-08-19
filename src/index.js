@@ -54,44 +54,44 @@ function colorSky() {
   let svgObject = document.getElementById("svgObject");
   let svgEle = svgObject.contentDocument.querySelector("svg")
   let skyTop = svgEle.getElementById('stop_gradient_top')
-  let skyMid = svgEle.getElementById('stop_gradient_mid')
+   skyTop.style.animation = "mymove 5 s infinite"
+  // let skyMid = svgEle.getElementById('stop_gradient_mid')
   
-  let r = 250
-  let g = 169
-  let b = 169
-  setInterval(paint, 10000);
+  // let r = 250
+  // let g = 169
+  // let b = 169
+  // setInterval(paint, 10000);
 
-  function paint() {
+  // function paint() {
+  //   debugger
+  //   if (r === 250 && g === 169 && b === 169) {
+  //     r = 238
+  //     g = 250
+  //     b = 169
+  //   }
+  //   else if (r === 238 && g === 250 && b === 169) {
+  //     r = 169
+  //     g = 250
+  //     b = 230
+
+  //   } else if (r === 169 && g === 250 && b === 230) {
+  //     r = 233
+  //     g = 169
+  //     b = 250
+
+  //   }
+
+  //   else if (r === 233 && g === 169 && b === 250) {
+  //     r = 250
+  //     g = 169
+  //     b = 169
+  //   }
+
+
+  // skyTop.style.stopColor = "rgba( " + r + ", " + g + ", " + b + ")"
+  // skyMid.style.stopColor = "rgba( " + b + ", " + r + ", " + g + ")"
     debugger
-    if (r === 250 && g === 169 && b === 169) {
-      r = 238
-      g = 250
-      b = 169
-    }
-    else if (r === 238 && g === 250 && b === 169) {
-      r = 169
-      g = 250
-      b = 230
-
-    } else if (r === 169 && g === 250 && b === 230) {
-      r = 233
-      g = 169
-      b = 250
-
-    }
-
-    else if (r === 233 && g === 169 && b === 250) {
-      r = 250
-      g = 169
-      b = 169
-    }
-
-
-  skyTop.style.stopColor = "rgba( " + r + ", " + g + ", " + b + ")"
-  skyMid.style.stopColor = "rgba( " + b + ", " + r + ", " + g + ")"
-  printSky()
-    debugger
-  }
+  // }
   // <stop id='stop_gradient_1' offset="0.447173" stop-color="rgba(180, 169, 250, 1)"/>
 
 }

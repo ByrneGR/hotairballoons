@@ -1,21 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* svg {
-  text-align: center;
-  /* height: 100px;
-  width: 1000px; */
-  /* border: 3px solid red; */
-/* } */
+html{background-size:cover;height:100%;overflow:hidden;width:100%}#sky{height:100vw;width:100%;position:relative}#stop_gradient_top{stop-color:#e9a9fa}
 
 
-
-
-
-/* svg {
-  float: left;
-} */
 /*# sourceMappingURL=main.css.map*/

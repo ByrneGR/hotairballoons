@@ -7,9 +7,12 @@ import './styles/index.scss';
 
 
 window.onload = function () {
-  launchBalloon()
-  printSky()
-  colorSky();
+
+  // colorSky();
+}
+
+function clickBalloon() {
+
 }
 
 function launchBalloon() {
@@ -17,7 +20,7 @@ function launchBalloon() {
   //  elem.style.transform = 'translate(-500px, 300px)'
   var xPos = -60;
   var yPos = 30;
-  setInterval(move, 0.5);
+  setInterval(move, 10);
 
   function move() {
     if (xPos < 52) {
@@ -50,51 +53,16 @@ function printSky() {
     html_ele.style.backgroundImage = "url(data:image/svg+xml;base64," + encoded + ")";
 }
 
-function colorSky() {
-  let svgObject = document.getElementById("svgObject");
-  let svgEle = svgObject.contentDocument.querySelector("svg")
-  let skyTop = svgEle.getElementById('stop_gradient_top')
-   skyTop.style.animation = "mymove 5 s infinite"
-  // let skyMid = svgEle.getElementById('stop_gradient_mid')
-  
-  // let r = 250
-  // let g = 169
-  // let b = 169
-  // setInterval(paint, 10000);
-
-  // function paint() {
-  //   debugger
-  //   if (r === 250 && g === 169 && b === 169) {
-  //     r = 238
-  //     g = 250
-  //     b = 169
-  //   }
-  //   else if (r === 238 && g === 250 && b === 169) {
-  //     r = 169
-  //     g = 250
-  //     b = 230
-
-  //   } else if (r === 169 && g === 250 && b === 230) {
-  //     r = 233
-  //     g = 169
-  //     b = 250
-
-  //   }
-
-  //   else if (r === 233 && g === 169 && b === 250) {
-  //     r = 250
-  //     g = 169
-  //     b = 169
-  //   }
-
-
-  // skyTop.style.stopColor = "rgba( " + r + ", " + g + ", " + b + ")"
-  // skyMid.style.stopColor = "rgba( " + b + ", " + r + ", " + g + ")"
-    debugger
-  // }
-  // <stop id='stop_gradient_1' offset="0.447173" stop-color="rgba(180, 169, 250, 1)"/>
-
+document.addEventListener('click', musicPlay);
+function musicPlay() {
+  var iframeElement = document.querySelector('iframe');
+  var widget1 = SC.Widget(iframeElement);
+  debugger
+  widget1.play()
+  document.removeEventListener('click', musicPlay);
+  let readyText = document.getElementById("readytext")
+  readyText.remove();
+  launchBalloon()
+  printSky()
 }
 
-// <!-- <animateTransform attributeName='transform' type='translate' from='0 0' to='150 0' begin='0s' dur='6s'
-// repeatCount = 'indefinite' / > -->

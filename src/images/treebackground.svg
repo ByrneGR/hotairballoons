@@ -3,6 +3,28 @@
 
 
 <svg width="1750" height="980" viewBox="0 0 1750 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style> 
+#stop_gradient_top {
+  animation: changecolor 1.4s infinite;
+  stop-color: rgba(250, 169, 169, 1);
+  animation-delay: -.7s;
+}
+
+@keyframes changecolor {
+  from {
+    stop-color: rgba(250, 169, 169, 1);
+  }
+
+  to {
+    stop-color: rgba(169, 250, 220, 1)
+  }
+}
+
+#stop_gradient_mid {
+  animation: changecolor 1.4s infinite;
+  stop-color: rgba(117, 115, 218, 1);
+}
+</style>
 <g id="Landscape Gum Tree Free vector 1">
 <g id="Group">
 <path id="low_sky" d="M1750 0H0V980H1750V0Z" fill="url(#paint0_linear)"/>

@@ -14,19 +14,9 @@ html {
 }
 
 #stop_gradient_top {
-  animation: mymove 5s infinite;
+  stop-color: rgba(233, 169, 250, 1);
 }
 
 
-
-@keyframes mymove {
-  from {
-    background-color: red;
-  }
-
-  to {
-    background-color: blue;
-  }
-}
 
 

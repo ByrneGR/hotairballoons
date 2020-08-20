@@ -7,6 +7,12 @@ import './styles/index.scss';
 
 
 window.onload = function () {
+  debugger
+    	var a = document.getElementById("svgObject");
+      let stop_gradient_mid = a.contentDocument.querySelector("svg").querySelector("#stop_gradient_mid")
+      let style = stop_gradient_mid.style
+      style.webkitAnimationPlayState = 'running'
+  debugger
 
   // colorSky();
 }
@@ -51,18 +57,55 @@ function printSky() {
     var encoded = window.btoa(svg);
     let html_ele = document.getElementById("html_ele")
     html_ele.style.backgroundImage = "url(data:image/svg+xml;base64," + encoded + ")";
+
 }
 
 document.addEventListener('click', musicPlay);
 function musicPlay() {
-  var iframeElement = document.querySelector('iframe');
-  var widget1 = SC.Widget(iframeElement);
-  debugger
-  widget1.play()
+  var audio = document.querySelector("audio");
+  audio.play()
   document.removeEventListener('click', musicPlay);
   let readyText = document.getElementById("readytext")
   readyText.remove();
   launchBalloon()
   printSky()
+}
+
+document.querySelector("#pause_animation").addEventListener('click', toggleAnimation)
+
+
+
+
+	// var a = document.getElementById("svgObject");
+  // let stop_gradient_mid = a.contentDocument.querySelector("svg").querySelector("#stop_gradient_mid")
+
+  // stop_gradient_mid.onclick = toggleAnimation;
+  // stop_gradient_mid.style.webkitAnimationPlayState = 'running';
+
+
+function toggleAnimation() {
+  	var a = document.getElementById("svgObject");
+    let stop_gradient_mid = a.contentDocument.querySelector("svg").querySelector("#stop_gradient_mid")
+    debugger
+
+  var style;
+    style = stop_gradient_mid.style;
+    if (style.webkitAnimationPlayState === 'running') {
+      style.webkitAnimationPlayState = 'paused';
+      style.animationPlayState = 'paused';
+      style.mozAnimationPlayState = 'paused';
+      style.oAnimationPlayState = 'paused';
+      printSky()
+    } else {
+      debugger
+      style.webkitAnimationPlayState = 'running';
+      style.animationPlayState = 'running';
+      style.mozAnimationPlayState = 'running';
+      style.oAnimationPlayState = 'running';
+      style.webkitAnimationPlayState = 'running';
+
+        printSky()
+    }
+
 }
 

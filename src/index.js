@@ -1,4 +1,7 @@
 import './styles/index.scss';
+const Balloon = require("./animations/balloon.js")
+const Background = require("./animations/background.js")
+
 
 // document.addEventListener('DOMContentLoaded', (event) => {
 //   console.log('DOM fully loaded and parsed');
@@ -6,39 +9,46 @@ import './styles/index.scss';
 // });
 let audio = document.querySelector("audio")
 let animationBtn = document.querySelector("#pause_animation")
-let beginContainer = document.querySelector("#begin_container")
 
-audio.src = "./dist/assets/westayedupallnight.mp3"
+const back = new Background;
+// let beginContainer = document.querySelector("#begin_container")
+// let last40 = []
 
-const context = new AudioContext();
-const src = context.createMediaElementSource(audio);
-const analyser = context.createAnalyser();
-var gainNode = context.createGain();
-src.connect(analyser);
-analyser.connect(context.destination);
-analyser.fftSize = 256;
-const bufferLength = analyser.frequencyBinCount;
-const dataArray = new Uint8Array(bufferLength);
-analyser.getByteTimeDomainData(dataArray);
+// audio.src = "./dist/assets/westayedupallnight.mp3"
 
-checkDataArray(dataArray)
+// const context = new AudioContext();
+// const src = context.createMediaElementSource(audio);
+// const analyser = context.createAnalyser();
+// var gainNode = context.createGain();
+// src.connect(analyser);
+// analyser.connect(context.destination);
+// analyser.fftSize = 256;
+// const bufferLength = analyser.frequencyBinCount;
+// const dataArray = new Uint8Array(bufferLength);
+// analyser.getByteTimeDomainData(dataArray);
+
+// checkDataArray()
 
 
 window.onload = function () {
-  printNoFillSky()
+  back.printNoFillSky()
   // setAnimationRunning()
   // // toggleAnimation()
-  launchBalloon()
+  // launchBalloon()
+  const b = new Balloon;
 
-
-  hide(audio)
-  hide(animationBtn)
+// checkDataArray(dataArray)
+//   hide(audio)
+//   hide(animationBtn)
 
 
 
 
   // colorSky();
 }
+
+
+
 
 function setAnimationRunning() {
   printSky()
@@ -49,33 +59,6 @@ function setAnimationRunning() {
   })
 }
 
-function launchBalloon() {
-  var elem = document.getElementById('balloon2');
-  //  elem.style.transform = 'translate(-500px, 300px)'
-  var xPos = -60;
-  var yPos = 30;
-  setInterval(move, 10);
-
-  function move() {
-    if (xPos < 52) {
-      xPos += 0.015
-    } else {
-      xPos = -60;
-      yPos = 30
-    }
-    if (xPos < -5) {
-      yPos -= 0.008
-      // else if (xPos >= -5 && xPos < 5) {
-      //   yPos = 0
-    } else {
-      yPos += 0.008
-    }
-    // else {
-    //   yPos++
-    // }   
-    elem.style.transform = 'translate( ' + xPos + 'vw, ' + yPos + 'vw )'
-  }
-}
 
 function printSky() {
   var a = document.getElementById("svgObject");
@@ -86,16 +69,16 @@ function printSky() {
 
 }
 
-function printNoFillSky() {
-  var a = document.getElementById("svgObjectNoFill");
-  // Get the SVG document inside the Object tag
-  var svgDoc = a.contentDocument;
-  var svg = a.contentDocument.querySelector("svg").outerHTML;
-  var encoded = window.btoa(svg);
-  let html_ele = document.getElementById("html_ele")
-  html_ele.style.backgroundImage = "url(data:image/svg+xml;base64," + encoded + ")";
+// function printNoFillSky() {
+//   var a = document.getElementById("svgObjectNoFill");
+//   // Get the SVG document inside the Object tag
+//   var svgDoc = a.contentDocument;
+//   var svg = a.contentDocument.querySelector("svg").outerHTML;
+//   var encoded = window.btoa(svg);
+//   let html_ele = document.getElementById("html_ele")
+//   html_ele.style.backgroundImage = "url(data:image/svg+xml;base64," + encoded + ")";
 
-}
+// }
 
 document.querySelector('#session_btn').addEventListener('click', musicPlay);
 
@@ -159,37 +142,93 @@ function refresh() {
 }
 
 
-function checkDataArray(dataArray) {
-  setInterval(render, 500);
+function checkDataArray() {
+  window.requestAnimationFrame(render);
 
 }
+
+
+  // var a = document.getElementById("svgObject");
+  // let stopGradientMid = a.contentDocument.querySelector("svg").querySelector("stop_gradient_mid")
+
+let start;
+
+// function step(timestamp) {
+//   if (start === undefined)
+//     start = timestamp;
+//   const elapsed = timestamp - start;
+
+//   // `Math.min()` is used here to make sure that the element stops at exactly 200px.
+//   element.style.transform = 'translateX(' + Math.min(0.1 * elapsed, 200) + 'px)';
+
+//   if (elapsed < 2000) { // Stop the animation after 2 seconds
+//     window.requestAnimationFrame(render);
+//   }
+// }
+
+// window.requestAnimationFrame(render);
+
+
+function avg(nums) {
+  return nums.reduce((a, b) => (a + b)) / nums.length;
+}
+
+function max(nums) {
+return Math.max.apply(Math, nums)
+// debugger
+  // })
+}
+
+function last40Arr(num) {
+  // debugger
+  last40.push(num)
+  if (last40.length >= 40)
+  last40.shift()
+}
+
 
 function render() {
   analyser.getByteFrequencyData(dataArray);
   // console.log(dataArray)
   //spliting the data array into 2 pieces upper half and lower half
-  // const lowerHalf = dataArray.slice(0, dataArray.length / 2);
-  // const upperHalf = dataArray.slice(
-  //   dataArray.length / 2 + 1,
-  //   dataArray.length
-  // );
+  const lowerHalf = dataArray.slice(0, dataArray.length / 2);
+  const upperHalf = dataArray.slice(
+    dataArray.length / 2 + 1,
+    dataArray.length
+  );
+  // console.log(lowerHalf)
   // //creating subsections of 1/4 for sound frequencies
-  // const lowerHalfFreq = lowerHalf.slice(0, lowerHalf.length / 2);
-  // const lowerUpperHalfFreq = lowerHalf.slice(
-  //   lowerHalf.length / 2,
-  //   lowerHalf.length
-  // );
-  // const upperLowerFreqHalf = upperHalf.slice(0, upperHalf.length / 2);
-  // const upperUpperFreqHalf = upperHalf.slice(
-  //   upperHalf.length / 2 + 1,
-  //   upperHalf.length
-  // );
-  // const lowerAvg = avg(lowerHalfFreq);
-  // const lowerUpperAvg = avg(lowerUpperHalfFreq);
-  // const upperLowerAvg = avg(upperLowerFreqHalf);
-  // const upperUpperAvg = avg(upperUpperFreqHalf);
-  // const lowerLowerMax = max(lowerHalfFreq);
-  // const lowerUpperMax = max(lowerUpperHalfFreq);
+  const lowerHalfFreq = lowerHalf.slice(0, lowerHalf.length / 2);
+  const lowerUpperHalfFreq = lowerHalf.slice(
+    lowerHalf.length / 2,
+    lowerHalf.length
+    );
+    const upperLowerFreqHalf = upperHalf.slice(0, upperHalf.length / 2);
+    const upperUpperFreqHalf = upperHalf.slice(
+      upperHalf.length / 2 + 1,
+      upperHalf.length
+      );
+      const lowerAvg = avg(lowerHalfFreq);
+      const lowerUpperAvg = avg(lowerUpperHalfFreq);
+      const upperLowerAvg = avg(upperLowerFreqHalf);
+      const upperUpperAvg = avg(upperUpperFreqHalf);
+      // console.log(lowerAvg)
+      // console.log(lowerUpperAvg)
+
+  const lowerLowerMax = max(lowerHalfFreq);
+  const lowerUpperMax = max(lowerUpperHalfFreq);
+  const lowerMax = max(lowerHalf)
+  // console.log(lowerMax)
+  last40Arr(lowerUpperMax)
+  if (!last40.includes(0) && (lowerUpperMax === max(last40)) && (lowerUpperMax / avg(last40.slice(37, 40))) > 1.05) {
+      var a = document.getElementById("svgObject");
+      let stopGradientMid = a.contentDocument.querySelector("svg").querySelector("#stop_gradient_mid")
+    // debugger
+    stopGradientMid.style.stopColor = "rgba(250, 169, 169, 1)"
+    printSky()
+  console.log(lowerUpperMax) 
+}
+        checkDataArray()
   // const upperLowerMax = max(upperLowerFreqHalf);
   // const upperUpperMax = max(upperUpperFreqHalf);
   // const lowerLowerMin = min(lowerHalfFreq);
@@ -209,5 +248,4 @@ function render() {
   // const upperLowerMinFr = upperLowerMin / upperLowerFreqHalf.length;
   // const upperUpperMinFr = upperUpperMin / upperUpperFreqHalf.length;
 }
-
 

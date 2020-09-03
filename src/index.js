@@ -3,9 +3,7 @@ const Balloon = require("./animations/balloon.js")
 const Background = require("./animations/background.js")
 const Visualizer = require('./audio/visualizer.js')
 
-
 const back = new Background;
-
 let audio = document.querySelector("audio")
 let animationBtn = document.querySelector("#pause_animation")
 let beginContainer = document.querySelector("#begin_container")
@@ -17,6 +15,7 @@ window.onload = function () {
   // setInterval(callRender, 1000)
 
   const b = new Balloon;
+  // const viz = new Visualizer
 
 }
 
@@ -26,6 +25,7 @@ document.querySelector('#session_btn').addEventListener('click', () => {
   hide(beginContainer)
   reveal(audio)
   reveal(animationBtn);
+    const viz = new Visualizer
 });
 
 
@@ -53,10 +53,11 @@ function refresh() {
 }
 
 
-function callRender() {
-  const viz = new Visualizer
-  setInterval(viz.render(), 1000)
-}
+// function callRender() {
+//   const viz = new Visualizer
+//   // setInterval(viz.render(), 1000)
+//   setInterval(callRender, 1000)
+// }
 
 
 

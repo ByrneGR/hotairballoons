@@ -37,7 +37,7 @@ Background.prototype.toggleAnimation = function () {
       style.animationPlayState = 'paused';
       style.mozAnimationPlayState = 'paused';
       style.oAnimationPlayState = 'paused';
-      printSky()
+      this.printSky()
     } else {
 
       style.webkitAnimationPlayState = 'running';
@@ -46,9 +46,18 @@ Background.prototype.toggleAnimation = function () {
       style.oAnimationPlayState = 'running';
       style.webkitAnimationPlayState = 'running';
 
-      printSky()
+      this.printSky()
     }
 
+  })
+}
+
+Background.prototype.setAnimationRunning = function () {
+  this.printSky()
+  var a = document.getElementById("svgObject");
+  let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
+  treeAnimation.forEach(node => {
+    node.style.webkitAnimationPlayState = 'running'
   })
 }
 

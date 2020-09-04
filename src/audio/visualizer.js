@@ -66,7 +66,7 @@ Visualizer.prototype.draw = function() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   let radius = 65;
-  let bars = 150;
+  let bars = 125;
 
   // ctx.beginPath()
   // ctx.arc(
@@ -96,7 +96,7 @@ for (var i = bars; i > bars / 2; i--) {
 
   let x_end = canvas.width / 2 + Math.cos(radians * i) * (radius + bar_height);
   let y_end = canvas.height / 2 + Math.sin(radians * i) * (radius + bar_height);
-  let color = "rgb(" + 200 + ", " + (200 - dataArray[i]) + ", " + dataArray[i] + ")";
+  let color = "rgb(" + 250 + ", " + (50 + dataArray[i]) + ", " + (15 + dataArray[i]) + ")";
 
   ctx.strokeStyle = color;
   ctx.lineWidth = 3;
@@ -104,6 +104,7 @@ for (var i = bars; i > bars / 2; i--) {
   ctx.moveTo(x, y);
   ctx.lineTo(x_end, y_end);
   ctx.stroke();
+  // ctx.fillStyle = "orange";
 
 
   }

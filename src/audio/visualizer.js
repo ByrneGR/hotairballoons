@@ -61,20 +61,21 @@ function Visualizer() {
 
 Visualizer.prototype.draw = function() {
 
-    ctx.fillStyle = "blue";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // ctx.fillStyle = "transparent";
+    // ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  let radius = 75;
-  let bars = 100;
+  let radius = 200;
+  let bars = 400;
 
   ctx.beginPath()
-  ctx.arc(
-    canvas.width / 2,
-    canvas.height / 2,
-    radius,
-    0,
-    2 ^ Math.PI 
-    );
+  // ctx.arc(
+  //   canvas.width / 2,
+  //   canvas.height / 2,
+  //   radius,
+  //   0,
+  //   2 ^ Math.PI 
+  //   );
 
 ctx.stroke();
 analyser.getByteFrequencyData(dataArray)
@@ -85,6 +86,9 @@ for (var i = 0; i < bars; i++) {
 
   let x  = canvas.width / 2 + Math.cos(radians * i) * radius;
   let y  = canvas.height / 2 + Math.sin(radians * i) * radius;
+  debugger
+
+  // let x = 300
 
   let x_end = canvas.width / 2 + Math.cos(radians * i) * (radius + bar_height);
   let y_end = canvas.height / 2 + Math.sin(radians * i) * (radius + bar_height);
@@ -96,6 +100,7 @@ for (var i = 0; i < bars; i++) {
   ctx.moveTo(x, y);
   ctx.lineTo(x_end, y_end);
   ctx.stroke();
+
 
   }
   requestAnimationFrame(this.draw.bind(this))

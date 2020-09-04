@@ -7,6 +7,8 @@ function Balloon() {
 
  Balloon.prototype.launchBalloon = function() {
     var elem = document.getElementById('balloon2');
+    // var elem2 = document.getElementById('canvas');
+
     //  elem.style.transform = 'translate(-500px, 300px)'
     var xPos = -60;
     var yPos = 30;
@@ -30,6 +32,7 @@ function Balloon() {
       //   yPos++
       // }   
       elem.style.transform = 'translate( ' + xPos + 'vw, ' + yPos + 'vw )'
+      // elem2.style.transform = 'translate( ' + xPos + 'vw, ' + yPos + 'vw )'
     }
   }
 

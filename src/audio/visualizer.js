@@ -1,10 +1,18 @@
 
-let audio = document.querySelector("audio")
+// var iframeElement = document.querySelector('iframe');
+// // var audio = SC.Widget(iframeElement);
+// let audio = new Audio()
+// audio.src = iframeElement.src
+// audio.controls = true;
+// audio.autoplay = true;
+
+let audio1 = document.querySelector("audio")
 
 const context = new AudioContext();
-const src = context.createMediaElementSource(audio);
+const source = context.createMediaElementSource(audio1);
 const analyser = context.createAnalyser();
-src.connect(analyser);
+source.connect(analyser);
+analyser.connect(context.destination)
 
   const canvas = document.getElementById('canvas');
   const ctx = canvas.getContext('2d');
@@ -46,11 +54,16 @@ const dataArray = new Uint8Array(bufferLength);
 
 
 function Visualizer() {
+  // audio.play()
    requestAnimationFrame(this.draw.bind(this))
 //  setInterval(this.render, 1000)
 }
 
 Visualizer.prototype.draw = function() {
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
   let radius = 75;
   let bars = 100;
 

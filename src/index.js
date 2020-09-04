@@ -34,7 +34,8 @@ window.onload = function () {
 }
 
 document.querySelector('#session_btn').addEventListener('click', () => {
-  back.toggleAnimation()
+  back.printSky()
+  // back.toggleAnimation()
   audio.play()
   hide(beginContainer)
   // reveal(audio)

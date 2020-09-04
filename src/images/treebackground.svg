@@ -1,6 +1,6 @@
 <svg width="1750" height="980" viewBox="0 0 1750 980" fill="none" xmlns="http://www.w3.org/2000/svg">
 <style> 
-#stop_gradient_top {
+<!-- #stop_gradient_top {
   animation: changecolor 1.4s infinite;
   stop-color: rgba(250, 169, 169, 1);
   animation-delay: -.7s;
@@ -39,7 +39,7 @@
     -moz-animation-play-state:paused;
     -o-animation-play-state:paused; 
     animation-play-state:paused;
-}
+} -->
 
 
 

@@ -65,28 +65,32 @@ Visualizer.prototype.draw = function() {
     // ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  let radius = 200;
-  let bars = 400;
+  let radius = 65;
+  let bars = 150;
 
-  ctx.beginPath()
+  // ctx.beginPath()
   // ctx.arc(
   //   canvas.width / 2,
-  //   canvas.height / 2,
+  //   canvas.height / 4,
   //   radius,
   //   0,
   //   2 ^ Math.PI 
   //   );
+  // ctx.arc(256, 128, 128, 0, Math.PI, true);
+  // context.stroke();
 
 ctx.stroke();
+debugger
 analyser.getByteFrequencyData(dataArray)
 
-for (var i = 0; i < bars; i++) {
+for (var i = bars; i > bars / 2; i--) {
   let radians = (Math.PI * 2) / bars;
-  let bar_height = dataArray[i] * 0.5;
+  let bar_height = dataArray[i] * 0.3;
 
   let x  = canvas.width / 2 + Math.cos(radians * i) * radius;
   let y  = canvas.height / 2 + Math.sin(radians * i) * radius;
-  debugger
+
+
 
   // let x = 300
 

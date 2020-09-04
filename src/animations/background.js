@@ -26,6 +26,7 @@ Background.prototype.printNoFillSky = function () {
   }
 
 Background.prototype.toggleAnimation = function () {
+  
   var a = document.getElementById("svgObject");
   let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
 

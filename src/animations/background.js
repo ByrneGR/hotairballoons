@@ -25,14 +25,43 @@ Background.prototype.printNoFillSky = function () {
 
   }
 
-Background.prototype.toggleAnimation = function () {
+// Background.prototype.toggleAnimation = function () {
   
+//   var a = document.getElementById("svgObject");
+//   let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
+
+
+//   treeAnimation.forEach(node => {
+//     let style = node.style;
+//     if (style.webkitAnimationPlayState === 'running') {
+//       style.webkitAnimationPlayState = 'paused';
+//       style.animationPlayState = 'paused';
+//       style.mozAnimationPlayState = 'paused';
+//       style.oAnimationPlayState = 'paused';
+//       this.printSky()
+//     } else {
+
+//       style.webkitAnimationPlayState = 'running';
+//       style.animationPlayState = 'running';
+//       style.mozAnimationPlayState = 'running';
+//       style.oAnimationPlayState = 'running';
+//       style.webkitAnimationPlayState = 'running';
+
+//       this.printSky()
+//     }
+
+//   })
+
+
+Background.prototype.toggleAnimation = function () {
+
   var a = document.getElementById("svgObject");
   let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
 
 
   treeAnimation.forEach(node => {
     let style = node.style;
+    debugger
     if (style.webkitAnimationPlayState === 'running') {
       style.webkitAnimationPlayState = 'paused';
       style.animationPlayState = 'paused';
@@ -52,6 +81,7 @@ Background.prototype.toggleAnimation = function () {
 
   })
 }
+
 
 Background.prototype.setAnimationRunning = function () {
   this.printSky()

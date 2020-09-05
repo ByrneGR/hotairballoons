@@ -26,6 +26,7 @@ let beginContainer = document.querySelector("#begin_container")
 
 window.onload = function () {
   back.printNoFillSky()
+
   // setInterval(callRender, 1000)
 
   const b = new Balloon;
@@ -46,7 +47,7 @@ document.querySelector('#session_btn').addEventListener('click', () => {
 
 
 document.querySelector("#pause_animation").addEventListener('click', () => {
-  back.toggleAnimation()
+  back.modeChange()
 });
 
 document.querySelector("#logo_top_left").addEventListener('click', refresh)

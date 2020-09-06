@@ -24,6 +24,13 @@ function Balloon(background) {
   var a = document.getElementById("svgObjectlight");
   let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
 
+  let xMax = 100
+  let xMin = -60
+  let yMax = 30
+  let yMin = 60
+
+  // let xPos = Math.random() * (xMax - xMin) + xMin;
+  // let yPos = Math.random() * (yMax - yMin) + yMin;
     var xPos = -60;
     var yPos = 30;
 
@@ -35,6 +42,7 @@ function Balloon(background) {
       if (xPos < 52) {
         xPos += 0.015
       } else {
+        self.changeBallonColor()
         xPos = -60;
         yPos = 30
       }
@@ -72,63 +80,32 @@ Balloon.prototype.toggleAnimation = function() {
       backy.changeColor(stopMid, stopTop, stopMtn)
   }
   
+}  
 
-  // treeAnimation.forEach(node => {
+Balloon.prototype.changeBallonColor = function () {
+  let topLine1 = document.querySelector("#path3066")
+  let bottomLine1 = document.querySelector("#path3060")
 
-  //   changeColor(node)
-  //   // debugger
-  //   // let style = node.style;
+  let topLine2 = document.querySelector("#path3064")
+  let bottomLine2 = document.querySelector("#path3062")
 
-  //   // function animateBg(i) {
-  //   // node.style.fill = 'hsl(' + i + ', 100%, 50%)';
+  let r = Math.floor(Math.random() * 255)
+  let g = Math.floor(Math.random() * 255)
+  let b = Math.floor(Math.random() * 255)
 
-  //   // setTimeout(function () {
-  //   //   toggleAnimation(++i)
-  //   // }, i);
-  // })
+  let r1 = Math.floor(Math.random() * 255)
+  let g1 = Math.floor(Math.random() * 255)
+  let b1 = Math.floor(Math.random() * 255)
+
+  let color1 = "rgb(" + r + ", " + g + ", " + b + ")";
+  let color2 = "rgb(" + r1 + ", " + g1 + ", " + b1 + ")";
+  topLine1.style.fill = color1
+  bottomLine1.style.fill = color1
+
+  topLine2.style.fill = color2
+  bottomLine2.style.fill = color2
 
 }
-
-
-// changeColor = function (node) {
-//   i += 1
-//   debugger
-//   // node.style.stopColor = "rbg(250" + ", " + i + ",  250)"  
-//   // stopMid.style.stopColor = "rbg(250" + ", " + i + ",  250)"  
-//   // node.style.stopColor = "rbg(250" + ", " + "10" + ",  250)"
-//   // node.style.stopColor = "rgb(60, 179, 113)";
-//   node.style.stopColor = "red"
-// }
-
-
-
-// skyAnimation = function () {
-
-//   var a = document.getElementById("svgObject");
-//   let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
-
-
-//   treeAnimation.forEach(node => {
-//     let style = node.style;
-//     if (style.webkitAnimationPlayState === 'running') {
-//       style.webkitAnimationPlayState = 'paused';
-//       style.animationPlayState = 'paused';
-//       style.mozAnimationPlayState = 'paused';
-//       style.oAnimationPlayState = 'paused';
-//       this.printSky()
-//     } else {
-
-//       style.webkitAnimationPlayState = 'running';
-//       style.animationPlayState = 'running';
-//       style.mozAnimationPlayState = 'running';
-//       style.oAnimationPlayState = 'running';
-//       style.webkitAnimationPlayState = 'running';
-
-//       this.printSky()
-//     }
-
-//   })
-
 
 
 

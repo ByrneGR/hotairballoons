@@ -29,12 +29,12 @@ window.onload = function () {
 
   // setInterval(callRender, 1000)
 
-  const b = new Balloon(back);
   // const viz = new Visualizer
 
 }
 
 document.querySelector('#session_btn').addEventListener('click', () => {
+    const b = new Balloon(back);
   back.printSky()
   // back.toggleAnimation()
   audio.play()

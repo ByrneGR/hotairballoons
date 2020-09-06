@@ -26,7 +26,6 @@ window.onload = function () {
 document.querySelector('#session_btn').addEventListener('click', () => {
     const b = new Balloon(back);
   back.printSky()
- 
   // back.toggleAnimation()
   audio.play()
   hide(beginContainer)

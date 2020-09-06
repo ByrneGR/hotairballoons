@@ -2,6 +2,7 @@
 let audio1 = document.querySelector("audio")
 
 const context = new AudioContext();
+context.resume()
 const source = context.createMediaElementSource(audio1);
 const analyser = context.createAnalyser();
 source.connect(analyser);

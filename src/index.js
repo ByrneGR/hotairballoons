@@ -11,17 +11,7 @@ let animationBtn = document.querySelector("#pause_animation")
 let beginContainer = document.querySelector("#begin_container")
 
 
-// const context = new AudioContext();
-// const src = context.createMediaElementSource(audio);
-// const analyser = context.createAnalyser();
-// src.connect(analyser);
-// debugger
 
-// const canvas = document.getElementById('canvas');
-// const ctx = canvas.getContext('2d');
-
-// const bufferLength = analyser.frequencyBinCount;
-// const dataArray = new Uint8Array(bufferLength);
 
 
 window.onload = function () {
@@ -36,6 +26,7 @@ window.onload = function () {
 document.querySelector('#session_btn').addEventListener('click', () => {
     const b = new Balloon(back);
   back.printSky()
+ 
   // back.toggleAnimation()
   audio.play()
   hide(beginContainer)

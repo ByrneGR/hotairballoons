@@ -1,11 +1,4 @@
 
-// var iframeElement = document.querySelector('iframe');
-// // var audio = SC.Widget(iframeElement);
-// let audio = new Audio()
-// audio.src = iframeElement.src
-// audio.controls = true;
-// audio.autoplay = true;
-
 let audio1 = document.querySelector("audio")
 
 const context = new AudioContext();
@@ -19,37 +12,6 @@ analyser.connect(context.destination)
 
 const bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
-
-// var gainNode = context.createGain();
-// gainNode.connect(context.destination);
-// var gain = 1;
-
-// gainNode.gain.setValueAtTime(gain, context.currentTime);
-// var gainNode = context.createGain();
-// src.connect(analyser);
-// analyser.connect(context.destination);
-// analyser.fftSize = 256;
-// const bufferLength = analyser.frequencyBinCount;
-// const dataArray = new Uint8Array(bufferLength);
-// analyser.getByteTimeDomainData(dataArray);
-
-
-// function avg(nums) {
-//   return nums.reduce((a, b) => (a + b)) / nums.length;
-// }
-
-// function max(nums) {
-//   return Math.max.apply(Math, nums)
-//   // debugger
-//   // })
-// }
-
-// function last40Arr(num) {
-//   // debugger
-//   last40.push(num)
-//   if (last40.length >= 40)
-//     last40.shift()
-// }
 
 
 
@@ -111,15 +73,6 @@ for (var i = bars; i > (bars) / 2; i--) {
   }
   requestAnimationFrame(this.draw.bind(this))
 }
-
-// Visualizer.prototype.render = function () {
-//   this.console.log(dataArray)
-// }
-
-
-
-
-
 
 
 Visualizer.prototype.render = function() {

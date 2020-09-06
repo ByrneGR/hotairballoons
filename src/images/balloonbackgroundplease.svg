@@ -184,15 +184,15 @@
 </g>
 <defs>
 <linearGradient id="paint0_linear" x1="892" y1="181" x2="875" y2="525" gradientUnits="userSpaceOnUse">
-<stop offset="0.0478941" id='stop_gradient_mid' />
+<stop offset="0.0478941" id='stop_gradient_mid' stop-color="#ABB0E2"/>
 <stop offset="1" stop-color="#D7C4E2"/>
 </linearGradient>
 <linearGradient id="paint1_linear" x1="875" y1="0" x2="875" y2="186" gradientUnits="userSpaceOnUse">
-<stop offset="0.0581482" id='stop_gradient_top' />
+<stop offset="0.0581482" id='stop_gradient_top'  stop-color="#FFBFBF"/>
 <stop offset="0.950287" stop-color="#7DB8E2"/>
 </linearGradient>
 <linearGradient id="paint2_linear" x1="875" y1="219.9" x2="875" y2="749" gradientUnits="userSpaceOnUse">
-<stop id='stop_gradient_mtn'/>
+<stop id='stop_gradient_mtn' stop-color="white"/>
 <stop offset="1" stop-color="#AAD6E0"/>
 </linearGradient>
 <linearGradient id="paint3_linear" x1="880.35" y1="254.3" x2="880.35" y2="748.8" gradientUnits="userSpaceOnUse">

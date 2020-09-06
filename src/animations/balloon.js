@@ -19,10 +19,7 @@ function Balloon(background) {
     // var elem2 = document.getElementById('canvas');
 
     //  elem.style.transform = 'translate(-500px, 300px)'
-  debugger
   let self = this
-  var a = document.getElementById("svgObjectlight");
-  let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
 
   let xMax = 100
   let xMin = -60
@@ -74,7 +71,8 @@ Balloon.prototype.toggleAnimation = function() {
   let stopMtn = a.contentDocument.querySelector("svg").querySelector("#stop_gradient_mtn")
   // debugger
   let backy = this.background
-  setInterval(timeColor, 300)
+  timeColor()
+  setInterval(timeColor, 500)
 
   function timeColor() {
       backy.changeColor(stopMid, stopTop, stopMtn)

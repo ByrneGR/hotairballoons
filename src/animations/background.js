@@ -1,9 +1,10 @@
-let i = 0
-let mode = "dark"
+
 
 let r = 250;
 let g = 153;
 let b = 153;
+
+
 
 
 function Background() {
@@ -32,36 +33,6 @@ Background.prototype.printNoFillSky = function () {
   }
 
 
-
-
-
-
-
-// Background.prototype.toggleAnimation = function () {
-
-
-//   var a = document.getElementById("svgObjectlight");
-//   debugger
-//   // let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
-//   let stopMid = a.contentDocument.querySelector("svg").querySelector("#stop_gradient_mid")
-//   // debugger
-//   setInterval(this.background.changeColor(stopMid), 1000)
-
-//   // treeAnimation.forEach(node => {
-
-//   //   changeColor(node)
-//   //   // debugger
-//   //   // let style = node.style;
-
-//   //   // function animateBg(i) {
-//   //   // node.style.fill = 'hsl(' + i + ', 100%, 50%)';
-
-//   //   // setTimeout(function () {
-//   //   //   toggleAnimation(++i)
-//   //   // }, i);
-//   // })
-
-// }
 
 
 Background.prototype.modeChange = function () {

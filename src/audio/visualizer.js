@@ -86,7 +86,7 @@ analyser.getByteFrequencyData(dataArray)
 
 for (var i = bars; i > (bars) / 2; i--) {
   let radians = (Math.PI * 2) / bars;
-  let bar_height = dataArray[i] * 0.3;
+  let bar_height = dataArray[i] * 0.6;
 
   let x  = canvas.width / 2 + Math.cos(radians * i) * radius;
   let y  = canvas.height / 2 + Math.sin(radians * i) * radius;
@@ -97,7 +97,7 @@ for (var i = bars; i > (bars) / 2; i--) {
 
   let x_end = canvas.width / 2 + Math.cos(radians * i) * (radius + bar_height);
   let y_end = canvas.height / 2 + Math.sin(radians * i) * (radius + bar_height);
-  let color = "rgb(" + 250 + ", " + (50 + dataArray[i]) + ", " + (15 + dataArray[i]) + ")";
+  let color = "rgb(" + 250 + ", " + (50 + i) + ", " + (15 + i) + ")";
 
   ctx.strokeStyle = color;
   ctx.lineWidth = 3;

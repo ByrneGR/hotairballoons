@@ -1,8 +1,9 @@
-
+let i = 0
 let mode = "dark"
 
 
 function Background() {
+
 }
 
 Background.prototype.printSky = function () {
@@ -26,37 +27,42 @@ Background.prototype.printNoFillSky = function () {
 
   }
 
+
+
+
+
+
+
 // Background.prototype.toggleAnimation = function () {
-  
-//   var a = document.getElementById("svgObject");
-//   let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
 
 
-//   treeAnimation.forEach(node => {
-//     let style = node.style;
-//     if (style.webkitAnimationPlayState === 'running') {
-//       style.webkitAnimationPlayState = 'paused';
-//       style.animationPlayState = 'paused';
-//       style.mozAnimationPlayState = 'paused';
-//       style.oAnimationPlayState = 'paused';
-//       this.printSky()
-//     } else {
+//   var a = document.getElementById("svgObjectlight");
+//   debugger
+//   // let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
+//   let stopMid = a.contentDocument.querySelector("svg").querySelector("#stop_gradient_mid")
+//   // debugger
+//   setInterval(this.background.changeColor(stopMid), 1000)
 
-//       style.webkitAnimationPlayState = 'running';
-//       style.animationPlayState = 'running';
-//       style.mozAnimationPlayState = 'running';
-//       style.oAnimationPlayState = 'running';
-//       style.webkitAnimationPlayState = 'running';
+//   // treeAnimation.forEach(node => {
 
-//       this.printSky()
-//     }
+//   //   changeColor(node)
+//   //   // debugger
+//   //   // let style = node.style;
 
-//   })
+//   //   // function animateBg(i) {
+//   //   // node.style.fill = 'hsl(' + i + ', 100%, 50%)';
 
+//   //   // setTimeout(function () {
+//   //   //   toggleAnimation(++i)
+//   //   // }, i);
+//   // })
+
+// }
 
 
 Background.prototype.modeChange = function () {
     if (mode === "dark") {
+      debugger
     let object = "svgObject" + mode
       var a = document.getElementById(object);
       var svg = a.contentDocument.querySelector("svg").outerHTML;
@@ -64,6 +70,7 @@ Background.prototype.modeChange = function () {
       let html_ele = document.getElementById("html_ele")
       html_ele.style.backgroundImage = "url(data:image/svg+xml;base64," + encoded + ")";
       mode = "light"; 
+      document.querySelector("#pause_animation").innerHTML = "Light Mode"
   }
 
     else if (mode === "light") {
@@ -74,12 +81,24 @@ Background.prototype.modeChange = function () {
       let html_ele = document.getElementById("html_ele")
       html_ele.style.backgroundImage = "url(data:image/svg+xml;base64," + encoded + ")";
       mode = "dark"; 
+      document.querySelector("#pause_animation").innerHTML = "Dark Mode"
   }
 }  
 
-changeColor = function(node) {
+Background.prototype.changeColor = function(node) {
   debugger
-  node.style.fill = "red"
+
+  // node.style.stopColor = "red"
+    i += 1
+    
+    if (i >= 250) {
+      i = 0
+    }
+
+    // node.style.stopColor = "rgb(250" + ", " + i + ",  250)" 
+    // // node.style.stopColor = "rgb(255, 165, 0)"
+       node.style.stopColor = "rgb(250, " + i + ", " + (100 - i) + ")"
+       this.printSky()
 }
 
 

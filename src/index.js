@@ -29,7 +29,7 @@ window.onload = function () {
 
   // setInterval(callRender, 1000)
 
-  const b = new Balloon;
+  const b = new Balloon(back);
   // const viz = new Visualizer
 
 }
@@ -39,15 +39,37 @@ document.querySelector('#session_btn').addEventListener('click', () => {
   // back.toggleAnimation()
   audio.play()
   hide(beginContainer)
+  // toggleAnimation(0)
   // reveal(audio)
   reveal(animationBtn);
     const viz = new Visualizer
 });
 
 
+// function toggleAnimation(i) {
+
+//   var a = document.getElementById("svgObjectlight");
+//   let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
+
+
+//   treeAnimation.forEach(node => {
+//     // debugger
+//     // let style = node.style;
+
+//     // function animateBg(i) {
+//     node.style.fill = 'hsl(' + i + ', 100%, 50%)';
+
+//     setTimeout(function () {
+//       toggleAnimation(++i)
+//     }, i);
+//   })
+
+// }
+
+
 
 document.querySelector("#pause_animation").addEventListener('click', () => {
-  back.modeChange()
+  // back.modeChange()
 });
 
 document.querySelector("#logo_top_left").addEventListener('click', refresh)
@@ -67,6 +89,29 @@ function refresh() {
   location.reload();
   return false;
 }
+
+// function toggleAnimation(i) {
+
+//   var a = document.getElementById("svgObjectlight");
+//   let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
+  
+
+//   treeAnimation.forEach(node => {
+//       debugger
+
+//     // let style = node.style;
+
+//     // function animateBg(i) {
+//     node.style.stopColor = 'rgb(169, ' +  i + ', ' +'250)';
+
+//     setTimeout(function () {
+//       debugger
+//       toggleAnimation(++i)
+//     }, i);
+//   })
+
+// }
+
 
 
 // function callRender() {

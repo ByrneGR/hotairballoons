@@ -229,7 +229,7 @@
 </g>
 <defs>
 <linearGradient id="paint0_linear" x1="889.5" y1="405.5" x2="875" y2="980" gradientUnits="userSpaceOnUse">
-<stop class="tree_animation" id='stop_gradient_mid' offset="0.447173" stop-color="#93F097"/>
+<stop class="tree_animation" id='stop_gradient_mid' offset="0.447173" />
 <stop offset="1" stop-color="#FFFF00" stop-opacity="0"/>
 </linearGradient>
 <linearGradient id="paint1_linear" x1="875" y1="0" x2="875" y2="484" gradientUnits="userSpaceOnUse">

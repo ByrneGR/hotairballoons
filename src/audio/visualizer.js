@@ -48,7 +48,7 @@ analyser.getByteFrequencyData(dataArray)
 
 for (var i = bars; i > (bars) / 2; i--) {
   let radians = (Math.PI * 2) / bars;
-  let bar_height = dataArray[i] * 0.6;
+  let bar_height = dataArray[i] * 0.7;
 
   let x  = canvas.width / 2 + Math.cos(radians * i) * radius;
   let y  = canvas.height / 2 + Math.sin(radians * i) * radius;

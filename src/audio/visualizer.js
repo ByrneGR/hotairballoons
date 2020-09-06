@@ -2,7 +2,6 @@
 let audio1 = document.querySelector("audio")
 
 const context = new AudioContext();
-context.resume()
 const source = context.createMediaElementSource(audio1);
 const analyser = context.createAnalyser();
 source.connect(analyser);
@@ -17,6 +16,7 @@ const dataArray = new Uint8Array(bufferLength);
 
 
 function Visualizer() {
+  context.resume()
   // audio.play()
   // this.drawSun()
    requestAnimationFrame(this.draw.bind(this))

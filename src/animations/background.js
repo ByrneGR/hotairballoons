@@ -1,6 +1,10 @@
 let i = 0
 let mode = "dark"
 
+let r = 250;
+let g = 153;
+let b = 153;
+
 
 function Background() {
 
@@ -85,19 +89,42 @@ Background.prototype.modeChange = function () {
   }
 }  
 
-Background.prototype.changeColor = function(node) {
+Background.prototype.changeColor = function(stopMid, stopTop, stopMtn) {
   debugger
 
   // node.style.stopColor = "red"
-    i += 1
-    
-    if (i >= 250) {
-      i = 0
-    }
+  if (r === 250 && g < 250 && b === 153 ) {
+    g += 1
+  }
+  if (r > 153 && g === 250 && b === 153) {
+    r -= 1
+  }  
+
+  if (r === 153 && g === 250 && b < 250) {
+    b += 1
+  }  
+
+  if (r === 153 && g > 153 && b === 250) {
+    g -= 1
+  }
+
+  if (r < 250 && g === 153 && b === 250) {
+    r += 1
+  }
+
+  if (r === 250 && g === 153 && b > 153) {
+    b -= 1
+  }
+
+
+
 
     // node.style.stopColor = "rgb(250" + ", " + i + ",  250)" 
     // // node.style.stopColor = "rgb(255, 165, 0)"
-       node.style.stopColor = "rgb(250, " + i + ", " + (100 - i) + ")"
+      //  stopMid.style.stopColor = "rgb(250, " + i + ", " + (100 - i) + ")"
+       stopTop.style.stopColor = "rgb(" + r + ", " + g + ", " + b +")";
+       stopMid.style.stopColor = "rgb(" + g + ", " + r + ", " + b +")";
+       stopMtn.style.stopColor = "rgb(" + b + ", " + g + ", " + r +")";
        this.printSky()
 }
 

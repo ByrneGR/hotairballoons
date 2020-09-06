@@ -233,15 +233,15 @@
 </g>
 <defs>
 <linearGradient id="paint0_linear" x1="892" y1="181" x2="875" y2="525" gradientUnits="userSpaceOnUse">
-<stop class="tree_animation" id='stop_gradient_mid' offset="0.0478941" stop-color="#D1ABE2"/>
+<stop class="tree_animation" id='stop_gradient_mid' offset="0.0478941" />
 <stop offset="1" stop-color="#ADDCDC"/>
 </linearGradient>
 <linearGradient id="paint1_linear" x1="875" y1="0" x2="875" y2="186" gradientUnits="userSpaceOnUse">
-<stop class="tree_animation" id='stop_gradient_mid' offset="0.0581482" stop-color="#1FCBE2"/>
+<stop class="tree_animation" id='stop_gradient_top' offset="0.0581482" />
 <stop offset="1" stop-color="#AFE7A6"/>
 </linearGradient>
 <linearGradient id="paint2_linear" x1="875" y1="219.9" x2="875" y2="749" gradientUnits="userSpaceOnUse">
-<stop class="tree_animation" id='stop_gradient_top' stop-color="white"/>
+<stop class="tree_animation" id='stop_gradient_mtn' />
 <stop offset="1" stop-color="#AAD6E0"/>
 </linearGradient>
 <linearGradient id="paint3_linear" x1="880.35" y1="254.3" x2="880.35" y2="748.8" gradientUnits="userSpaceOnUse">
@@ -249,7 +249,7 @@
 <stop offset="1" stop-color="#605851"/>
 </linearGradient>
 <linearGradient id="paint4_linear" x1="307.15" y1="177.8" x2="307.15" y2="749.1" gradientUnits="userSpaceOnUse">
-<stop class="tree_animation" id='stop_gradient_mid' stop-color="#B46B22"/>
+<stop class="tree_animation" id='stop_gradient_adf' stop-color="#B46B22"/>
 <stop offset="1" stop-color="#4D4946"/>
 </linearGradient>
 <clipPath id="clip0">

@@ -61,13 +61,15 @@ Balloon.prototype.toggleAnimation = function() {
 
   var a = document.getElementById("svgObjectlight");
   // let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
-  let stopMid = a.contentDocument.querySelector("svg").querySelector("#stop_gradient_mid") 
+  let stopMid = a.contentDocument.querySelector("svg").querySelector("#stop_gradient_mid")
+  let stopTop = a.contentDocument.querySelector("svg").querySelector("#stop_gradient_top")
+  let stopMtn = a.contentDocument.querySelector("svg").querySelector("#stop_gradient_mtn")
   // debugger
   let backy = this.background
-  setInterval(timeColor, 1000)
+  setInterval(timeColor, 300)
 
   function timeColor() {
-      backy.changeColor(stopMid)
+      backy.changeColor(stopMid, stopTop, stopMtn)
   }
   
 

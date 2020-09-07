@@ -9,21 +9,22 @@ var iframeElement = document.querySelector('iframe');
 let audio = document.querySelector("audio")
 let animationBtn = document.querySelector("#pause_animation")
 let beginContainer = document.querySelector("#begin_container")
+let balloonEle = document.getElementById('balloon2');
 
 
 
 
 
 window.onload = function () {
+  hide(balloonEle)
   back.printNoFillSky()
   hide(audio)
-  // setInterval(callRender, 1000)
 
-  // const viz = new Visualizer
 
 }
 
 document.querySelector('#session_btn').addEventListener('click', () => {
+  reveal(balloonEle)
     const b = new Balloon(back);
   back.printSky()
   // back.toggleAnimation()

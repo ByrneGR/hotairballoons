@@ -186,6 +186,7 @@ z-index:-1;
     background-color: rgb(0, 0, 0);
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
+   
     /* Black w/ opacity */
 }
 
@@ -195,7 +196,10 @@ z-index:-1;
     /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    border-radius: 5px;
+    width: 50%;
+    font-family: 'Avenir-Light',
+        'sans-serif';
     /* Could be more or less, depending on screen size */
 }
 

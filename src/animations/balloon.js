@@ -28,7 +28,7 @@ function Balloon(background) {
 
   // let xPos = Math.random() * (xMax - xMin) + xMin;
   // let yPos = Math.random() * (yMax - yMin) + yMin;
-    var xPos = -60;
+    var xPos = -70;
     var yPos = 30;
 
     var i = 0
@@ -40,7 +40,7 @@ function Balloon(background) {
         xPos += 0.015
       } else {
         self.changeBallonColor()
-        xPos = -60;
+        xPos = -70;
         yPos = 30
       }
       if (xPos < -5) {

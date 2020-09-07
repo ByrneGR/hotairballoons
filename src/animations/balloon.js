@@ -43,7 +43,7 @@ function Balloon(background) {
         xPos = -70;
         yPos = 30
       }
-      if (xPos < -5) {
+      if (xPos < -3) {
         yPos -= 0.008
         // else if (xPos >= -5 && xPos < 5) {
         //   yPos = 0

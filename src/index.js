@@ -38,10 +38,6 @@ document.querySelector('#session_btn').addEventListener('click', () => {
 
 
 
-// document.querySelector("#pause_animation").addEventListener('click', () => {
-//   // back.modeChange()
-// });
-
 document.querySelector("#logo_top_left").addEventListener('click', refresh)
 
 

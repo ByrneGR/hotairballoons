@@ -35,31 +35,6 @@ Background.prototype.printNoFillSky = function () {
 
 
 
-Background.prototype.modeChange = function () {
-    if (mode === "dark") {
-      debugger
-    let object = "svgObject" + mode
-      var a = document.getElementById(object);
-      var svg = a.contentDocument.querySelector("svg").outerHTML;
-      var encoded = window.btoa(svg);
-      let html_ele = document.getElementById("html_ele")
-      html_ele.style.backgroundImage = "url(data:image/svg+xml;base64," + encoded + ")";
-      mode = "light"; 
-      document.querySelector("#pause_animation").innerHTML = "Light Mode"
-  }
-
-    else if (mode === "light") {
-    let object = "svgObject" + mode
-      var a = document.getElementById(object);
-      var svg = a.contentDocument.querySelector("svg").outerHTML;
-      var encoded = window.btoa(svg);
-      let html_ele = document.getElementById("html_ele")
-      html_ele.style.backgroundImage = "url(data:image/svg+xml;base64," + encoded + ")";
-      mode = "dark"; 
-      document.querySelector("#pause_animation").innerHTML = "Dark Mode"
-  }
-}  
-
 Background.prototype.changeColor = function(stopMid, stopTop, stopMtn) {
   debugger
 

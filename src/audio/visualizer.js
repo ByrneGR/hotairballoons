@@ -17,8 +17,7 @@ const dataArray = new Uint8Array(bufferLength);
 
 function Visualizer() {
   context.resume()
-  // audio.play()
-  // this.drawSun()
+ 
    requestAnimationFrame(this.draw.bind(this))
 //  setInterval(this.render, 1000)
 }

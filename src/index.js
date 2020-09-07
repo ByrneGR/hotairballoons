@@ -16,7 +16,7 @@ let beginContainer = document.querySelector("#begin_container")
 
 window.onload = function () {
   back.printNoFillSky()
-
+  hide(audio)
   // setInterval(callRender, 1000)
 
   // const viz = new Visualizer
@@ -29,38 +29,18 @@ document.querySelector('#session_btn').addEventListener('click', () => {
   // back.toggleAnimation()
   audio.play()
   hide(beginContainer)
+  reveal(audio)
   // toggleAnimation(0)
   // reveal(audio)
-  reveal(animationBtn);
+  // reveal(animationBtn);
     const viz = new Visualizer
 });
 
 
-// function toggleAnimation(i) {
 
-//   var a = document.getElementById("svgObjectlight");
-//   let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
-
-
-//   treeAnimation.forEach(node => {
-//     // debugger
-//     // let style = node.style;
-
-//     // function animateBg(i) {
-//     node.style.fill = 'hsl(' + i + ', 100%, 50%)';
-
-//     setTimeout(function () {
-//       toggleAnimation(++i)
-//     }, i);
-//   })
-
-// }
-
-
-
-document.querySelector("#pause_animation").addEventListener('click', () => {
-  // back.modeChange()
-});
+// document.querySelector("#pause_animation").addEventListener('click', () => {
+//   // back.modeChange()
+// });
 
 document.querySelector("#logo_top_left").addEventListener('click', refresh)
 
@@ -80,37 +60,27 @@ function refresh() {
   return false;
 }
 
-// function toggleAnimation(i) {
 
-//   var a = document.getElementById("svgObjectlight");
-//   let treeAnimation = a.contentDocument.querySelector("svg").querySelectorAll(".tree_animation")
-  
+var modal = document.getElementById("about_modal_container");
 
-//   treeAnimation.forEach(node => {
-//       debugger
+// Get the button that opens the modal
+var aboutBtn = document.getElementById("about-btn");
 
-//     // let style = node.style;
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
-//     // function animateBg(i) {
-//     node.style.stopColor = 'rgb(169, ' +  i + ', ' +'250)';
+aboutBtn.onclick = function () {
+  modal.style.display = "block";
+}
 
-//     setTimeout(function () {
-//       debugger
-//       toggleAnimation(++i)
-//     }, i);
-//   })
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+}
 
-// }
-
-
-
-// function callRender() {
-//   const viz = new Visualizer
-//   // setInterval(viz.render(), 1000)
-//   setInterval(callRender, 1000)
-// }
-
-
-
-
-
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

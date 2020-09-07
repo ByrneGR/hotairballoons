@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="./dist/main.css" />
-  <title>Document</title>
+  <title>chillsession</title>
   <link rel="shortcut icon" href="#" />
   
 </head>
@@ -27,29 +27,38 @@
               </defs>
             </svg>
             </div>
-            <div class="nav-btn">
-              <a href="#/about">About</a>
-              <Link to="/about" />
-            </div>
-            <div class="nav-btn">
-              <a href="#/contact">Contact</a>
-              <Link to="/contact" />
-            </div>
+
           </div>
           
           <div class="rightsideNavbar">
             <audio preload="auto" controls>
               <source src="./src/music/skyline.mp3" type="audio/mpeg">
             </audio>
-            
-              <button id="pause_animation">Dark Mode</button>
-            <button class="nav-btn" id="signup_btn">
-              Sign Up
-            </button>
+                        <div class="nav-btn">
+                          <btn id="about-btn">About</btn>
+                    
+                        </div>
           </div>
         </div>
   <div id="sky">
-
+    <div id="about_modal_container">
+      <div id="modal-content">
+        <span class="close">X</span>
+        <h2>About Chillsession</h2>
+        <p>In these unprecedented times of uncertainty and isolation, loneliness and anxiety is rampant. Chillsession aims to be an
+        escape for those seeking a moment to breathe and clear their heads. Through calming music, engaging visuals, and a
+        likeminded community, visitors can take some time to themselves and connect with people around the world who enjoy the
+        same music.</p>
+        <h2>About Me</h2>
+        <p>My name is Gabe and I'm a software developer, growth marketer and music lover. I have built web applications with
+        Javascript, React, and Ruby on Rails and I love testing my critical-thinking and creative problem-solving through
+        writing code.
+        
+        I also have a background in digital marketing and managed advertising efforts at Industrious, a national coworking space
+        provider and Ampush, an ad agency in San Francisco. Outside of work, I love going to concerts, making beats, and
+        travelling to new places. Learn more at <a target="_blank" href="https://gabebyrne.com">gabebyrne.com</a></p>
+      </div>
+    </div>
   <object id="svgObjectdark" data="./src/images/balloonbackgrounddark.svg" type="image/svg+xml" height="1" width="1">
     Your browser doesn't support SVG
   </object>

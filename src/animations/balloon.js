@@ -21,14 +21,14 @@ function Balloon(background) {
     //  elem.style.transform = 'translate(-500px, 300px)'
   let self = this
 
-  let xMax = 100
-  let xMin = -60
-  let yMax = 30
-  let yMin = 60
+  // let xMax = 100
+  // let xMin = -60
+  // let yMax = 30
+  // let yMin = 60
 
   // let xPos = Math.random() * (xMax - xMin) + xMin;
   // let yPos = Math.random() * (yMax - yMin) + yMin;
-    var xPos = -70;
+    var xPos = -55;
     var yPos = 30;
 
     var i = 0
